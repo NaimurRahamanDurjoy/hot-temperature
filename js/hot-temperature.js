@@ -16,4 +16,11 @@ const weatherDataLoad = () => {
 
 const displayCityWeather = city => {
     console.log(city);
+    const cityWeatherDiv = document.getElementById('location-weather');
+    cityWeatherDiv.innerHTML = `
+        <img src="https://openweathermap.org/img/wn/${city.weather[0].icon}@2x.png" alt="">
+        <h1>${city.name}</h1>
+        <h3><span>${city.main.temp}</span>&deg;C</h3>
+        <h1 class="lead">${city.weather[0].description}</h1>
+    `;
 }
